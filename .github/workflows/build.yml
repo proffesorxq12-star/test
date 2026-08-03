@@ -1,0 +1,20 @@
+name: Cloud Exe Compiler
+
+on: [push, workflow_dispatch]
+
+jobs:
+  pyinstaller-build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Run PyInstaller Action
+        uses: Martin005/pyinstaller-action@v1.2.0
+        with:
+          python-ver: '3.11'
+          spec: 'project.py'  # Ensure your script file uploaded to GitHub is named main.py
+          requirements: 'requirements.txt'
+          upload_exe_with_name: 'AmazonInventoryTool'
+          options: '--onedir, --windowed, --collect-all pandas'
