@@ -10,10 +10,13 @@ mapping_file = askopenfilename(
     filetypes=[("Excel Files", "*.xlsx *.xls")]
 )
 
-print("Select Inventory File")
+print("Select Amazon Inventory File")
 inventory_file = askopenfilename(
-    title="Select Inventory File",
-    filetypes=[("Excel Files", "*.xlsx *.xls")]
+    title="Select Flat.File.PriceInventory.in.txt",
+    filetypes=[
+        ("Amazon Inventory File", "*.txt"),
+        ("Text Files", "*.txt")
+    ]
 )
 
 df = pd.read_excel(mapping_file)
