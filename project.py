@@ -64,7 +64,7 @@ for sku, qty in final_dict.items():
     })
 
 df = pd.DataFrame(rows)
-p
+
 df.to_excel("amazon_inventory.xlsx", index=False)
 
 print("Excel file created successfully.")
